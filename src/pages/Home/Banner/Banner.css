@@ -1,6 +1,6 @@
 body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
-  background-color: rgb(237, 255, 237);
+  background-color: rgb(195, 254, 196);
 }
 .my-bg-color-1{
     background-color: white;
@@ -12,5 +12,8 @@ body {
     color: white;
 }
 .my-bg-color-2{
-    background-color: rgb(24, 197, 24);
+    background-color: rgb(23, 211, 23);
+}
+.my-section-bg{
+    background-color: rgb(243,255,243);
 }

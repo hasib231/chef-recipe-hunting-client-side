@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 
 const NavigationBar = () => {
-    const user = true;
+    const user = false;
     const handleLogOut = () => {
 
     }
     return (
       <div>
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
             {/* <Navbar.Brand href="#home" className="my-color-1">
               CHEF HUNTER

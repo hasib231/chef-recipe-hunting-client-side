@@ -16,7 +16,7 @@ const Banner = () => {
                 <h1 className="fw-bold my-color-1">
                   Rain or shine,it's time to dine
                 </h1>
-                <p className="fw-bold my-color-1">
+                <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
                   inventore ducimus eius consequuntur? Et harum sed adipisci
                   quis odit cupiditate.
