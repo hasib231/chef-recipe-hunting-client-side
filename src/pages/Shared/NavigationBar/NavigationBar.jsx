@@ -12,7 +12,10 @@ const NavigationBar = () => {
       <div>
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
           <Container>
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            {/* <Navbar.Brand href="#home" className="my-color-1">
+              CHEF HUNTER
+            </Navbar.Brand> */}
+            <h1 className="my-color-1">CHEF HUNTER</h1>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mx-auto">
@@ -26,12 +29,21 @@ const NavigationBar = () => {
                 )}
 
                 {user ? (
-                  <Button onClick={handleLogOut} variant="secondary">
+                  <Button
+                    onClick={handleLogOut}
+                    variant="secondary"
+                    className="my-bg-color-2 my-color-2"
+                  >
                     Logout
                   </Button>
                 ) : (
                   <Link to="/login">
-                    <Button variant="secondary">Login</Button>
+                    <Button
+                      variant="secondary"
+                      className="my-bg-color-2 my-color-2"
+                    >
+                      Login
+                    </Button>
                   </Link>
                 )}
               </Nav>

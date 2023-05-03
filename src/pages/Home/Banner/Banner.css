@@ -1,0 +1,16 @@
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  background-color: rgb(237, 255, 237);
+}
+.my-bg-color-1{
+    background-color: white;
+}
+.my-color-1{
+    color: rgb(23, 211, 23);
+}
+.my-color-2{
+    color: white;
+}
+.my-bg-color-2{
+    background-color: rgb(24, 197, 24);
+}
