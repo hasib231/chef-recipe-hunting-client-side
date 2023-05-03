@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from './Layout/Header.jsx';
 import Home from './pages/Home/Home/Home.jsx';
 import NotFoundPage from './pages/Shared/NotFoundPage/NotFoundPage.jsx';
+import Blog from './pages/Blog/Blog.jsx';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
+      {
+        path: "/blog",
+        element: <Blog></Blog>
+      }
     ],
   },
   {
