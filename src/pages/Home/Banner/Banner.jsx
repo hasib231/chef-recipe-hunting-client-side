@@ -21,7 +21,9 @@ const Banner = () => {
                   inventore ducimus eius consequuntur? Et harum sed adipisci
                   quis odit cupiditate.
                 </p>
-                <Button className="my-bg-color-2">Order Now</Button>
+                <Button variant="primary" className="my-bg-color-2 my-color-2">
+                  Order Now
+                </Button>
               </div>
             </Col>
             <Col lg={6}>

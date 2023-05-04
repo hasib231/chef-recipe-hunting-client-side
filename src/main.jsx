@@ -11,6 +11,8 @@ import Blog from './pages/Blog/Blog.jsx';
 import Chefs from './pages/Home/Chefs/Chefs.jsx';
 import ChefDetails from './pages/ChefDetails/ChefDetails.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
+import Login from './pages/Login/Login.jsx';
+import Register from './pages/Register/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
         path: "/chef/:id",
         element: <ChefDetails></ChefDetails>,
         loader: ({params}) => fetch(`https://chef-recipe-hunting-server-side-hasib231.vercel.app/chef/${params.id}`)
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       },
       {
         path: "/blog",
