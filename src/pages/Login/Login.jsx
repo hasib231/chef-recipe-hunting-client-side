@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContex } from "../../providers/AuthProvider";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Login = () => {
-  const { signIn } = useContext(AuthContex);
+  const { signIn } = useContext(AuthContext);
 //   const navigate = useNavigate();
 //   const location = useLocation();
 //   console.log("login page location", location);
@@ -18,15 +18,15 @@ const Login = () => {
     const password = form.password.value;
     console.log(email, password);
 
-    // signIn(email, password)
-    //   .then((result) => {
-    //     const loggedUser = result.user;
-    //     console.log(loggedUser);
-    //     navigate(from, { replace: true });
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        // navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
