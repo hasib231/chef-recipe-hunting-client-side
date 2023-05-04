@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+import { AuthContex } from '../../../providers/AuthProvider';
 
 const NavigationBar = () => {
-    const user = false;
+  const {user} = useContext(AuthContex)
+  
     const handleLogOut = () => {
 
     }

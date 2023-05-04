@@ -10,6 +10,7 @@ import NotFoundPage from './pages/Shared/NotFoundPage/NotFoundPage.jsx';
 import Blog from './pages/Blog/Blog.jsx';
 import Chefs from './pages/Home/Chefs/Chefs.jsx';
 import ChefDetails from './pages/ChefDetails/ChefDetails.jsx';
+import AuthProvider from './providers/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,8 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
