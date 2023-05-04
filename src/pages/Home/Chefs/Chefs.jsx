@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import ChefCart from '../../../Components/ChefCart';
+import { Row } from 'react-bootstrap';
 
 const Chefs = () => {
+  const chefCart = useLoaderData();
+  console.log(chefCart);
+
     return (
       <div className="container my-section-bg">
-        <div className='text-center w-50 m-auto py-5'>
+        <div className="text-center w-50 m-auto py-5">
           <h1>Best Chefs in Canada</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
@@ -11,7 +17,11 @@ const Chefs = () => {
             reiciendis optio pariatur.
           </p>
         </div>
-        <div></div>
+        <Row md={3} className="g-5 container">
+          {chefCart.map((chef) => (
+            <ChefCart key={chef.id} chef={chef}></ChefCart>
+          ))}
+        </Row>
       </div>
     );
 };
