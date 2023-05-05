@@ -16,9 +16,6 @@ const NavigationBar = () => {
       <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
-            {/* <Navbar.Brand href="#home" className="my-color-1">
-              CHEF HUNTER
-            </Navbar.Brand> */}
             <h1 className="my-color-1">CHEF HUNTER</h1>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -30,19 +27,17 @@ const NavigationBar = () => {
                 <Link className="my-color-1 ms-4" to="/blog">
                   Blog
                 </Link>
-                {/* <Nav.Link href="/blog">Blog</Nav.Link>
-                <Nav.Link href="#pricing">Career</Nav.Link> */}
               </Nav>
               <Nav>
                 {user && (
-                  <FaUserCircle style={{ fontSize: "2rem" }}></FaUserCircle>
+                  <FaUserCircle style={{ fontSize: "2rem",color: "green" }}></FaUserCircle>
                 )}
 
                 {user ? (
                   <Button
                     onClick={handleLogOut}
                     variant="secondary"
-                    className="my-bg-color-2 my-color-2"
+                    className="my-bg-color-2 my-color-2 ms-4"
                   >
                     Logout
                   </Button>
