@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googlePopup, setUser, gitHubPopup } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log("login page location", location);
@@ -29,6 +30,30 @@ const Login = () => {
       });
   };
 
+  const handleGoogleSignIn = () => {
+    googlePopup()
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        setUser(loggedInUser);
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
+  }
+
+  const handleGithubPopup = () => {
+    gitHubPopup()
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        setUser(loggedInUser);
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
+  }
+
   return (
     <Container className=" w-25 mx-auto p-5 my-section-bg my-5 rounded-5">
       <h3 className="my-color-1 mb-5 text-center">Please Login</h3>
@@ -38,7 +63,7 @@ const Login = () => {
           <Form.Control
             type="email"
             name="email"
-            placeholder="Enter email"
+            placeholder="Enter your email"
             required
           />
         </Form.Group>
@@ -48,18 +73,20 @@ const Login = () => {
           <Form.Control
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="Enter your Password"
             required
           />
         </Form.Group>
 
-        <Button
-          variant="primary"
-          type="submit"
-          className="my-bg-color-2 my-color-2 my-4"
-        >
-          Login
-        </Button>
+        <div className="text-center">
+          <Button
+            variant="primary"
+            type="submit"
+            className="my-bg-color-2 my-color-2 mt-3"
+          >
+            Login
+          </Button>
+        </div>
         <br />
         <Form.Text className="text-secondary">
           Don't Have an Account? <Link to="/register">Register</Link>
@@ -67,7 +94,25 @@ const Login = () => {
         <Form.Text className="text-success"></Form.Text>
         <Form.Text className="text-danger"></Form.Text>
       </Form>
-      <p>or</p>
+      <p className="text-center">or</p>
+      <div className="text-center">
+        <button
+          onClick={handleGoogleSignIn}
+          type="button"
+          class="btn btn-outline-success"
+        >
+          <FaGoogle style={{ fontSize: "1.5rem" }} className="me-2"></FaGoogle>
+          Sign in with Google
+        </button>
+        <button
+          onClick={handleGithubPopup}
+          type="button"
+          class="btn btn-outline-success mt-3"
+        >
+          <FaGithub style={{ fontSize: "1.5rem" }} className="me-2"></FaGithub>
+          Sign in with Github
+        </button>
+      </div>
     </Container>
   );
 };
