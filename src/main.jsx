@@ -13,6 +13,7 @@ import ChefDetails from './pages/ChefDetails/ChefDetails.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 import Login from './pages/Login/Login.jsx';
 import Register from './pages/Register/Register.jsx';
+import PrivateRoute from './routes/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,16 +30,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/chef/:id",
-        element: <ChefDetails></ChefDetails>,
-        loader: ({params}) => fetch(`https://chef-recipe-hunting-server-side-hasib231.vercel.app/chef/${params.id}`)
+        element: (
+          <PrivateRoute>
+            <ChefDetails></ChefDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://chef-recipe-hunting-server-side-hasib231.vercel.app/chef/${params.id}`
+          ),
       },
       {
-        path: '/login',
-        element: <Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path: '/register',
-        element: <Register></Register>
+        path: "/register",
+        element: <Register></Register>,
       },
       {
         path: "/blog",
