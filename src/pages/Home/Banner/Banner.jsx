@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Col, Container, Image, Row } from 'react-bootstrap';
-import chefPic from '../../../assets/chef-pic.jpg'
 import './Banner.css'
 
 const Banner = () => {
@@ -27,7 +26,10 @@ const Banner = () => {
               </div>
             </Col>
             <Col lg={6}>
-              <Image src={chefPic} className="img-fluid"></Image>
+              <Image
+                src="https://img.freepik.com/free-photo/chef-with-thumb-up-white-background_1368-2842.jpg?w=740&t=st=1683301188~exp=1683301788~hmac=95f1a851df9cb16f4b82bbb4cef66eb3d8c11d0b832c2c55c51f1e06cf941c8c"
+                className="img-fluid"
+              ></Image>
             </Col>
           </Row>
         </Container>

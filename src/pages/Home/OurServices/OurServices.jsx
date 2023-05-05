@@ -12,7 +12,7 @@ const OurServices = () => {
             reiciendis optio pariatur.
           </p>
         </div>
-        <div className="w-75 m-auto my-card-bg p-5 text-center rounded-5">
+        <div className="w-75 m-auto my-card-bg p-5 text-center rounded-5 shadow">
           <div className="row">
             <div className="col-md-4">
               <img
@@ -20,7 +20,7 @@ const OurServices = () => {
                 className="img-fluid rounded-circle w-100 mb-4 shadow"
                 alt=""
               />
-              <h3 className="my-color-1">Food delivery</h3>
+              <h3>Food delivery</h3>
               <p>Fast food delivery service</p>
             </div>
 
@@ -30,7 +30,7 @@ const OurServices = () => {
                 className="img-fluid rounded-circle w-75 mb-4 shadow"
                 alt=""
               />
-              <h3 className="my-color-1">Chef hire</h3>
+              <h3>Chef hire</h3>
               <p>Hire the experience chef</p>
             </div>
 
@@ -40,7 +40,7 @@ const OurServices = () => {
                 className="img-fluid rounded-circle w-100 mb-4 shadow"
                 alt=""
               />
-              <h3 className="my-color-1">Restaurant book</h3>
+              <h3>Restaurant book</h3>
               <p>Book Restaurant for ceremony</p>
             </div>
           </div>
