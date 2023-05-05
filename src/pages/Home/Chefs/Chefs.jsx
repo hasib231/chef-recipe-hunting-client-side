@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ChefCart from '../../../Components/ChefCart';
 import { Row } from 'react-bootstrap';
+import { Spinner } from "react-bootstrap";
 
 const Chefs = () => {
   const chefCart = useLoaderData();
+  if (!chefCart) {
+    return <Spinner animation="border" variant="success" />;
+  }
   console.log(chefCart);
 
     return (
