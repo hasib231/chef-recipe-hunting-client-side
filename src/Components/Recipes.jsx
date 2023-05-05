@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col } from 'react-bootstrap';
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Recipes = ({ recipe }) => {
-    const { recipe_name, ingredients, cooking_method, rating } = recipe;
+  const { recipe_name, ingredients, cooking_method, rating } = recipe;
+  const [accepted, setAccepted] = useState(false);
+
+  const notify = () => toast("This recipe added to your favorite");
+  const handleAccepted = event => {
+        notify()
+        setAccepted(true)
+    
+    }
+  
   return (
     <div>
       <Col>
@@ -19,12 +30,18 @@ const Recipes = ({ recipe }) => {
             <h5 className="mt-4">Cooking method :</h5>
             <p>{cooking_method}</p>
 
-            <Button variant="primary" className="my-bg-color-2">
+            <Button
+              onClick={handleAccepted}
+              variant="primary"
+              disabled={accepted}
+              className="my-bg-color-2"
+            >
               Select in Favorite
             </Button>
           </Card.Body>
         </Card>
       </Col>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
