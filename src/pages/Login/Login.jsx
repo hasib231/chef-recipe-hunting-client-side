@@ -67,6 +67,7 @@ const Login = () => {
         <Form.Text className="text-success"></Form.Text>
         <Form.Text className="text-danger"></Form.Text>
       </Form>
+      <p>or</p>
     </Container>
   );
 };
