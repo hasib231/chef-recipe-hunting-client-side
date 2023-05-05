@@ -5,16 +5,13 @@ import { Link } from "react-router-dom";
 const NotFoundPage = () => {
   return (
     <div>
-      <Container className="text-center mt-5 py-5 bg-light bg-gradient rounded">
+      <Container className="text-center rounded">
         <Row>
           <Col>
-            <h1 className="display-1 text-danger">404 !!!</h1>
-            <p className="lead text-warning fw-bold">
-              Oops! The page you are looking for does not exist.
-            </p>
-            <Link to="/">
-              <Button className="my-button">Go Home</Button>
-            </Link>
+            <img
+              src="https://colorlib.com/wp/wp-content/uploads/sites/2/404-error-page-templates.jpg"
+              alt=""
+            />
           </Col>
         </Row>
       </Container>

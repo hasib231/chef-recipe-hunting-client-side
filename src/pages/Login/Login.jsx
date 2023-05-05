@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -9,6 +9,7 @@ const Login = () => {
   const { signIn, googlePopup, setUser, gitHubPopup } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const [error, setError] = useState("");
   console.log("login page location", location);
   const from = location.state?.from?.pathname || "/";
 
@@ -17,7 +18,7 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     signIn(email, password)
       .then((result) => {
@@ -27,6 +28,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message);
       });
   };
 
@@ -88,11 +90,11 @@ const Login = () => {
           </Button>
         </div>
         <br />
+        <Form.Text className="text-danger">{error}</Form.Text>
+        <br />
         <Form.Text className="text-secondary">
           Don't Have an Account? <Link to="/register">Register</Link>
         </Form.Text>
-        <Form.Text className="text-success"></Form.Text>
-        <Form.Text className="text-danger"></Form.Text>
       </Form>
       <p className="text-center">or</p>
       <div className="text-center">

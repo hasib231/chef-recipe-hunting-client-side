@@ -48,7 +48,7 @@ const Footer = () => {
               <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
                 <h6 className="text-uppercase fw-bold mb-4">
                   <MDBIcon icon="gem" className="me-3" />
-                  Company name
+                  CHEF HUNTER
                 </h6>
                 <p>
                   Here you can use rows and columns to organize your footer
@@ -58,25 +58,25 @@ const Footer = () => {
               </MDBCol>
 
               <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Products</h6>
+                <h6 className="text-uppercase fw-bold mb-4">Services</h6>
                 <p>
                   <a href="#!" className="text-reset">
-                    Angular
+                    chef
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">
-                    React
+                    Food
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">
-                    Vue
+                    Delivery
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">
-                    Laravel
+                    Best offer
                   </a>
                 </p>
               </MDBCol>
@@ -109,7 +109,7 @@ const Footer = () => {
                 <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
                 <p>
                   <MDBIcon icon="home" className="me-2" />
-                  New York, NY 10012, US
+                  Canada, CN 10012
                 </p>
                 <p>
                   <MDBIcon icon="envelope" className="me-3" />
@@ -132,7 +132,7 @@ const Footer = () => {
         >
           © 2021 Copyright:
           <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-            MDBootstrap.com
+             ChefHunter.com
           </a>
         </div>
       </MDBFooter>

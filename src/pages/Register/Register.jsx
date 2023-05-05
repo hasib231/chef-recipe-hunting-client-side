@@ -3,10 +3,13 @@ import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser
+  } = useContext(AuthContext);
   const [accepted, setAccepted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -21,15 +24,30 @@ const Register = () => {
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
+        updateUserData(createUser, name, photo);
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message)
       });
   };
 
   const handleAccepted = (event) => {
     setAccepted(event.target.checked);
   };
+
+  const updateUserData = (user, name, photo) => {
+    updateProfile(user, {
+      displayName: name, photoURL: photo
+    })
+      .then(() => {
+        console.log(user);
+      })
+      .catch((error) => {
+        setError(error.massage);
+      });
+  };
+  
 
   return (
     <Container className="w-25 mx-auto p-5 my-section-bg my-5 rounded-5">
@@ -85,20 +103,23 @@ const Register = () => {
             }
           />
         </Form.Group>
-        <Button
-          variant="primary"
-          disabled={!accepted}
-          type="submit"
-          className="my-bg-color-2 my-color-2 my-4"
-        >
-          Register
-        </Button>
+        <Link to="/">
+          <Button
+            variant="primary"
+            disabled={!accepted}
+            type="submit"
+            className="my-bg-color-2 my-color-2 my-4"
+          >
+            Register
+          </Button>
+        </Link>
+
         <br />
         <Form.Text className="text-secondary">
           Already Have an Account? <Link to="/login">Login</Link>
         </Form.Text>
-        <Form.Text className="text-success"></Form.Text>
-        <Form.Text className="text-danger"></Form.Text>
+        <br></br>
+        <Form.Text className="text-danger">{error}</Form.Text>
       </Form>
     </Container>
   );
