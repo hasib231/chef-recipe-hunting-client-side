@@ -16,4 +16,4 @@ Our Chef Hunter Website is a platform designed to provide food enthusiasts with 
 
 - Our website will be optimized for mobile devices, allowing users to access the platform on the go and use it seamlessly on their smartphones and tablets.
 
-# Live site Link - 
+# Live site Link - https://chef-recipe-hunter-4d487.web.app/
